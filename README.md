@@ -54,3 +54,43 @@ Codility可以帮助公司出一套在线的题目，来减轻程序员招聘是
 TestDome http://www.testdome.com/ 
 
 PotKnox http://www.potknox.com/ 
+
+## 企业校招
+
+**[杭州巨峰科技有限公司](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6732939&postchannel=000100&page=2)** C++开发工程师(pc客户端）https://jobs.51job.com/hangzhou/134983466.html?s=18&t=0
+
+**[亚信科技(中国)有限公司](https://jobs.51job.com/all/coVjZWNVU0VmkPagRgVjo.html)** C++开发工程师（南京）https://jobs.51job.com/nanjing/138265439.html?s=18&t=0
+
+**[上交所技术有限责任公司 ](https://jobs.51job.com/all/coAGBcP1MwDzJUNwdiUzY.html?#syzw)** 应用开发工程师 https://jobs.51job.com/shanghai/135078178.html?s=18&t=0
+
+**[广东联通校园招聘](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6780060&postchannel=000100&page=1)**
+
+**[芯源系统MPS](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=5991347)**
+
+**[江苏芯梦半导体设备有限公司](https://jobs.51job.com/all/coUjJVOARnBzEFZAVlXD4.html)**
+
+**[中科慧远](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6949536)**
+
+**[行云集](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6943580)**
+
+**[台积电](https://jobs.51job.com/all/coUzNRM18_DzcPY1Y3B2Y.html?#syzw)**
+
+**[中通](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6682747&postchannel=000100&page=1)**
+
+**[强一半导体2](https://i.51job.com/xy/coinfo.php?page=1&lang=c&ucoid=6935413&postchannel=000100)**
+
+**[上海七十迈数字科技有限公司](https://jobs.51job.com/all/coAWFSPwVnVmEHZlAyVjc.html)**
+
+**[翼支付](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6686515&postchannel=000100&page=2)**
+
+**[复旦微电子](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6653391)**
+
+**[民生信用卡](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6856466)**
+
+**[江苏华创微系统有限公司](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6711084&postchannel=000100&page=2)**
+
+**[立信会计师事务所（特殊普通合伙）](https://jobs.51job.com/all/coVDRdPgVkADtRPAdkVzI.html)**
+
+**[西南电子设备研究所](https://jobs.51job.com/all/coCGgFaQdsVm4GYgJhAGc.html)**
+
+**[29所](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6886102)**
