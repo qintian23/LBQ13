@@ -12,9 +12,15 @@
  */
 
 #include <stdio.h>
+#define s(x) (x)*(x)
 
 int main(void)
 {
+    int a=5;
+    int b;
+    // a++;
+    b=s(b=a++);
+    printf("%d\n",b);
     
     return 0;
 }
