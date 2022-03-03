@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+void swap(int &x, int &y)
+{
+    x^=y;
+    y^=x;
+    x^=y;
+}
+
 void BubbleSort(int* a, int n)
 {
     int i,j,temp;
@@ -12,9 +19,10 @@ void BubbleSort(int* a, int n)
             if(a[j]>a[j+1])
             {
                 change=0;
-                temp=a[j];
-                a[j]=a[j+1];
-                a[j+1]=temp;
+                // temp=a[j];
+                // a[j]=a[j+1];
+                // a[j+1]=temp;
+                swap(a[j],a[j+1]);
             }
         }
     }
