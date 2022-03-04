@@ -8,6 +8,7 @@ int main()
   int days=0;
   for(int i=month-1; i<5-1; i++)
     days+=months[i];
+    
   days+=4;
   cout<< days <<endl;
   return 0;
