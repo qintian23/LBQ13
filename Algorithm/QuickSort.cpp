@@ -17,7 +17,7 @@ int Partition_1(int arr[], int low, int high)
         swap(arr[low],arr[high]);
         while (low<high && arr[low]<=Pivotloc)
             ++low;
-        swap(arr[low],arr[high]);
+        swap(arr[high],arr[low]);
     }
     return low;
     
