@@ -10,13 +10,13 @@ int main()
     for(int i=0; i<3; i++)
         for(int j=0; j<n; j++)
             cin>> data[i][j];
-    
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<n; j++)
         {
             for(int k=0; k<n; k++)
             {
+                if(data[0][i] >= data[1][j]) break;
                 if(data[0][i] < data[1][j] && data[1][j] < data[2][k])
                     count++;
             }
