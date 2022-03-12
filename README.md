@@ -55,9 +55,9 @@ TestDome http://www.testdome.com/
 
 PotKnox http://www.potknox.com/ 
 
-## 企业校招
+<!-- ## 企业校招 -->
 
-**[杭州巨峰科技有限公司](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6732939&postchannel=000100&page=2)** C++开发工程师(pc客户端）https://jobs.51job.com/hangzhou/134983466.html?s=18&t=0
+<!-- **[杭州巨峰科技有限公司](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6732939&postchannel=000100&page=2)** C++开发工程师(pc客户端）https://jobs.51job.com/hangzhou/134983466.html?s=18&t=0
 
 **[亚信科技(中国)有限公司](https://jobs.51job.com/all/coVjZWNVU0VmkPagRgVjo.html)** C++开发工程师（南京）https://jobs.51job.com/nanjing/138265439.html?s=18&t=0
 
@@ -93,4 +93,4 @@ PotKnox http://www.potknox.com/
 
 **[西南电子设备研究所](https://jobs.51job.com/all/coCGgFaQdsVm4GYgJhAGc.html)**
 
-**[29所](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6886102)**
+**[29所](https://i.51job.com/xy/coinfo.php?lang=c&postchannel=000100&ucoid=6886102)** -->
