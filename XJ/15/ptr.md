@@ -61,6 +61,18 @@ auto_ptr允许赋值操作，只是赋值操作的含义是将指针指向对象
 
 其次auto_ptr不能作为容器的元素。由于容器中的对象需要支持拷贝构造函数，拷贝构造函数的参数为const类型，之不能改变，而auto_ptr在赋值是肯定会修改参数值，因为auto_ptr需要将参数中的指针置空，避免两个auto_ptr指向同一个对象。
 
-最后auto_ptr不适用于动态数组，由于动态数组使用delete[]释放数组中所有元素的空间，而auto_ptr在释放对象空间是默认使用delete操作符，只会释放动态数组首元素的空间，造成内存泄漏，而unique_ptr则会正确使用delete[]释放整个动态数组空间。
+最后auto_ptr不适用于动态数组，由于动态数组使用delete[/]释放数组中所有元素的空间，而auto_ptr在释放对象空间是默认使用delete操作符，只会释放动态数组首元素的空间，造成内存泄漏，而unique_ptr则会正确使用delete[/]释放整个动态数组空间。
 
 由于unique_ptr在内存安全性、充当容器元素和支持动态数组方面均优于auto_ptr，因此C++11中使用unique_ptr代替auto_ptr。
+
+```
+unique_ptr<int> p1=(new int(1));
+unique_ptr<int> p2=p1; // 不允许
+unique_ptr<int> p1=unique_ptr<int> (new int(1)); // 允许
+
+vector<auto_ptr<int>> vs; // 不允许
+vector<unique_ptr<int>> vs; // 允许
+
+auto_ptr<int> p1(new int[10]); // 不允许
+unique_ptr<int> p2(new int[10]); // 允许
+```
