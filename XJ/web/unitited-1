@@ -1,0 +1,9 @@
+
+
+int sockfd=socket();
+
+bind(sockfd,);
+
+listen(sockfd,backlog)
+
+bind_listen(sockfd,addr);
