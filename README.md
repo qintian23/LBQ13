@@ -55,6 +55,15 @@ TestDome http://www.testdome.com/
 
 PotKnox http://www.potknox.com/ 
 
+## 任务
+
+- [ ] 完善各个平台的resume
+- [ ] 完善我的附件（能原件则原件，否则PS）
+- [x] 列出我的resume的技术点
+- [ ] 加强经典算法与经典数据结构的编码
+- [ ] 初开综述思维导图，RF的设计，SL的仿真
+
+
 <!-- ## 企业校招 -->
 
 <!-- **[杭州巨峰科技有限公司](https://i.51job.com/xy/coinfo.php?lang=c&ucoid=6732939&postchannel=000100&page=2)** C++开发工程师(pc客户端）https://jobs.51job.com/hangzhou/134983466.html?s=18&t=0
