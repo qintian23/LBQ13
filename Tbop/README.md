@@ -15,3 +15,7 @@ Test： **Software Development Engineer in Test**（SDET）。
 PM：**Program Manager**（程序经理）。
 
 RSDE：**Research SDE** 的乐趣在于可以接触到各种最新的研究成果。
+
+https://www.msra.cn/
+
+MSDN：https://docs.microsoft.com/zh-cn/
