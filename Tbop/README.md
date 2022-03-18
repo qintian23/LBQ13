@@ -24,7 +24,7 @@ MSDN：https://docs.microsoft.com/zh-cn/
 
 网络编程，C++基础，数据库，Linux，项目开发
 
-线性结构：栈
+线性结构：栈，变脸所在存储区：堆存储区、全局及静态存储区、栈存储区、常量存储区；
 ……
 网络编程的选择题，TCP每层的主要协议；
 Linux的内核源码在哪个目录，linux中的export命令
