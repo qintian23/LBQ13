@@ -24,3 +24,23 @@ Task Manager
 8. `GetCPUTickCount()` —— 想拿到CPU核心运行周期数吗？用用这个方法吧。
 
 了解并应用了上面的API，就可以考虑在简历上写“精通Windows”了。
+
+### 1.1.1 int _tmain(int argc, _TCHAR* argv[])函数及其参数的详解
+
+首先，这个_tmain()是为了支持unicode所使用的main一个别名而已，既然是别名，应该有宏定义过的，在哪里定义的呢？就在那个让你困惑的<stdafx.h>里，有这么两行
+
+#include <stdio.h>
+#include <tchar.h>
+
+我们可以在头文件<tchar.h>里找到_tmain的宏定义
+
+#define _tmain main
+
+所以，经过预编译以后， _tmain就变成main了，这下明白了吧
+
+括号里面分别定义了一个整数型的参数个数（int argc ）和一个char类型的指针表示参数的值（char *argv[]）
+
+_tmain 是高版本的微软 VC 编译器才有的，你查看一下 _tmain 的定义，会发现其实它和 main 是一样的。你把 _tmain 改为 main，不会有问题。相反，你如果在低版本的 VC 编译器，比如VC6.0中将 main 改为 _tmian ，就会出错。
+参数的话，argc 表示命令行参数的个数，argv 是字符串数组，存储命令行参数。比如你写的程序是test.exe，你在命令行中输入“test.exe /r /s”，那么argc 就等于 3，argv[0] 就是 “test.exe”，argv[1]就是“/r"，argv[2] 就是“/s”。
+
+DWORD 现在表示 32bit 无符号整数，即使以后 Windows 升级到64位，DWORD 仍然是 32bit 无符号整数。
