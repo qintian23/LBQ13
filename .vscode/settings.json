@@ -11,6 +11,8 @@
         "xhash": "cpp",
         "xstring": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp"
     }
 }

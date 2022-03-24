@@ -1,5 +1,9 @@
 #include <stdio.h>
+#include <assert.h>
 #include <stdlib.h>
+
+#define OK 1
+#define ERROR 0
 
 typedef int T;
 const int MAXSIZE=100; // 链表初始化的最大长度
@@ -11,41 +15,92 @@ typedef struct
     T* data;
     int len; // 当前元素个数
     int size; // 当前顺序表最大容量
+    int incsize; // 追加的空间量
 }dqlist;
 
 // 初始化顺序表
-void Createlist(dqlist &list)
+void Createlist(dqlist* &list)
 {
-    list.data=(T*)malloc(MAXSIZE);
-    list.len=0;
-    list.size=MAXSIZE;
+    int i=0;
+    list->data=(T*)malloc(MAXSIZE * sizeof(T)); 
+    assert(list->data!=NULL);
+    list->len=0;
+    list->incsize=INCSIZE;
+    list->size=MAXSIZE;
+}
+
+void Initlist(dqlist* &list, T data[], int n)
+{
+    int i=0;
+    Createlist(list);
+    while (true)
+    {
+        if (n>list->size) Inclist(list);
+        else break;
+    }
+    
+    while (n>0)
+        list->data[i++]=data[i++];
+    list->len=n;
 }
 
 // 增加容量：重新分配一处更大的内存空间
-void Inclist(dqlist &list)
+void Inclist(dqlist* list)
 {
-    T* newdata=(T*)malloc(list.size+INCSIZE);
-    // 把原数据拷贝到新内存
-    for(int i=0; i<list.len; i++)
-        newdata[i]=list.data[i];
-    
-    // 更新动态顺序表指针和其他属性值
-    list.data=newdata;
-    list.size=list.size+INCSIZE;
+    T* base=(T*)realloc(list->data,(list->size+list->incsize)*sizeof(T));
+    assert(base!=NULL);
+    list->data=base;
+    list->size=list->size+list->incsize;
 }
 
 // 插入
+int Insertval(dqlist* list, int i, T item)
+{
+    int* base, * inser_ptr, * p;
+    if (i<1 || i>list->len+1)
+        return ERROR;
+    if(list->len>=list->size)
+        Inclist(list);
+    inser_ptr=&(list->data[i-1]);
+    for (p=&(list->data[list->len-1]); p>=inser_ptr; p--)
+        *(p+1)=*p;
+    *inser_ptr=item;
+    list->len++;
+    return OK;
+}
 
 // 删除：删除给定的值
-void Delval(dqlist &list, int val)
+void Delval(dqlist* list, int val)
 {
-    
+    dqlist* loc;
+    int j;
+    Createlist(loc);
+    Searchval(list, loc,val);
+    for(int i=loc->data[j++]; i<list->len; i++)
+    {
+        int k=i;
+        if(j<loc->len)
+        {
+            while (k<loc->data[j]) 
+                list[k]=list[k+1];
+        }
+        else
+        {
+             while (k<loc->len) 
+                list[k]=list[k+1];
+        } 
+    }
 }
 
 // 修改
 
 // 查找
-
+void Searchval(dqlist* list, dqlist* &loc, int val)
+{
+    for (int i = 0; i < list->len; i++)
+        if(list->data[i]==val)
+            Insertval(loc,loc->len-1,i);
+}
 // 逆序
 
 // 排序
