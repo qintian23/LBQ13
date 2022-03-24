@@ -1,6 +1,11 @@
 # LBQ13
 The 13th Blue Bridge Cup C / C + + programming is a preparation project for college students' group B provincial competition.
 
+## 宝藏网站
+
+[Thinbug](https://www.thinbug.com/) ：计算机专业搜索引擎
+[Edgar Simo-Serra](https://esslab.jp/~ess/en/) ：Edgar Simo-Serra Associate Professor的个人网站
+
 ## 刷题网站
 
 [Project Euler | 欧拉计划](http://pe-cn.github.io/problems/)
