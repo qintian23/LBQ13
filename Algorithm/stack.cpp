@@ -18,8 +18,11 @@ typedef struct
 }sqStack;
 
 int InitStack(sqStack* s);
-int Push(sqStack* s, T e);// 入栈操作
-int Pop(sqStack* s, T* e);// 出栈操作
+int Push(sqStack* s, T e); // 入栈操作
+int Pop(sqStack* s, T* e); // 出栈操作
+void DestroyStack(sqStack* s); // 销毁栈
+bool StackEmpty(sqStack s); // 判断栈是否为空
+int GetTop(sqStack s, T &e); // 获取栈顶元素
 
 int main(int argc, char** argcv)
 {
