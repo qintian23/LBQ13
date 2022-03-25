@@ -33,7 +33,7 @@ bool dfs(char c, int i, int j)
         vis[i][j]=1;
         if(pass(c,i,j) || jump[i][j]==1) 
             return true;
-        else if(vis[i][j]==1) 
+        else if(vis[i][j]==1 || jump[i][j]==-1) 
             return false;
         else 
             c=room[i][j];
@@ -61,6 +61,8 @@ int main()
                 jump[i][j]=1;
                 count++;
             }
+            else
+                jump[i][j]=-1;
         }
     }
     cout<< count <<endl;
