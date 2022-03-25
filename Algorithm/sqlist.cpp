@@ -9,6 +9,7 @@ typedef int T;
 const int MAXSIZE=100; // 链表初始化的最大长度
 const int INCSIZE=10; // 动态链表每次增加的长度
 
+// 是动态增长的谁需要说白点
 // 动态顺序表的结构体
 typedef struct
 {
@@ -37,7 +38,8 @@ int main(int argc, char** argv)
     int len=sizeof(data)/sizeof(int);
     Initlist(list,data,len);
     Displaylist(list);
-
+    Delval(list,8);
+    Displaylist(list);
     return 0;
 }
 
