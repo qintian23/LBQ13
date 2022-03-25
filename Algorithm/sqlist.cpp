@@ -18,6 +18,29 @@ typedef struct
     int incsize; // 追加的空间量
 }dqlist;
 
+void Inclist(dqlist* &list);// 增加容量：重新分配一处更大的内存空间
+void Initlist(dqlist* &list, T data[], int n);
+void Createlist(dqlist* &list);// 初始化顺序表
+void Searchval(dqlist* list, dqlist* &loc, int val);// 查找
+int Insertval(dqlist* list, int i, T item);// 插入
+void Delval(dqlist* &list, int val);// 删除：删除给定的值
+// 修改
+// 逆序
+// 排序
+void Displaylist(dqlist *list);// 输出
+
+int main(int argc, char** argv)
+{
+    dqlist* list;
+    Createlist(list);
+    int data[]={1,2,3,4,5,6,7,8,9,10};
+    int len=sizeof(data)/sizeof(int);
+    Initlist(list,data,len);
+    Displaylist(list);
+
+    return 0;
+}
+
 // 初始化顺序表
 void Createlist(dqlist* &list)
 {
@@ -29,9 +52,19 @@ void Createlist(dqlist* &list)
     list->size=MAXSIZE;
 }
 
+// 增加容量：重新分配一处更大的内存空间
+void Inclist(dqlist* &list)
+{
+    T* base=(T*)realloc(list->data,(list->size+list->incsize)*sizeof(T));
+    assert(base!=NULL);
+    list->data=base;
+    list->size=list->size+list->incsize;
+}
+
+// 初始化
 void Initlist(dqlist* &list, T data[], int n)
 {
-    int i=0;
+    int i=0,j=0;
     Createlist(list);
     while (true)
     {
@@ -39,18 +72,9 @@ void Initlist(dqlist* &list, T data[], int n)
         else break;
     }
     
-    while (n>0)
-        list->data[i++]=data[i++];
     list->len=n;
-}
-
-// 增加容量：重新分配一处更大的内存空间
-void Inclist(dqlist* list)
-{
-    T* base=(T*)realloc(list->data,(list->size+list->incsize)*sizeof(T));
-    assert(base!=NULL);
-    list->data=base;
-    list->size=list->size+list->incsize;
+    while (n-- > 0)
+        list->data[i++]=data[j++];
 }
 
 // 插入
@@ -70,7 +94,7 @@ int Insertval(dqlist* list, int i, T item)
 }
 
 // 删除：删除给定的值
-void Delval(dqlist* list, int val)
+void Delval(dqlist* &list, int val)
 {
     dqlist* loc;
     int j;
@@ -105,7 +129,13 @@ void Searchval(dqlist* list, dqlist* &loc, int val)
 
 // 排序
 
-int main(int argc, char** argv)
+// 输出
+void Displaylist(dqlist *list)
 {
-    return 0;
+    // printf("%d\n",list->len);
+    for (int i = 0; i < list->len; i++)
+    {
+        printf("%d, ",list->data[i]);
+    }
+    printf("\n");
 }
