@@ -52,3 +52,40 @@ ULRDLUURRR
 运行限制
 最大运行时间：1s
 最大运行内存: 128M
+
+error code
+```
+#include <iostream>
+ using namespace std;
+ int n[105];
+ int F[105][100005];
+ const int INF = 0x7fffffff;
+ int main()
+ {
+     int N;
+     cin>>N; 
+     for(int i = 1; i <= N; i++)
+         cin>>n[i];
+     for(int i = 1; i <= N; i++)
+     {
+         for(int j = 0; j <= 100005; j++)
+         {
+             if(j >= n[i])
+                 F[i][j] = max(F[i-1][j], F[i][j-n[i]]+n[i]);
+             else
+                 F[i][j] = F[i-1][j];
+         }
+     }
+     int ans = 0;
+     for(int i = 1; i <= 100005; i++)
+     {
+         if(F[N][i] != i)
+             ans++;
+     }
+     if(ans <= 30000)
+         cout<<ans;
+     else
+         cout<<"INF";
+     return 0;
+ }
+```
