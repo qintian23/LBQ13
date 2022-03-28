@@ -1,21 +1,35 @@
-#include <iostream>
-#include <string>
-using namespace std;
-int main(int argc, char* argv[])
+#include<stdio.h>
+
+int max_days[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+bool check(int year,int month,int day)
 {
-    string day;
-    cin>> day;
-    if(day[0]>='6' || day[5]>='6') // 19**年
-    {
-        cout<< "19" << day.substr(0,2) << '-' <<  day.substr(3,2) << '-' <<  day.substr(6,2) <<endl;
-        cout<< "19" << day.substr(6,2) << '-' <<  day.substr(0,2) << '-' <<  day.substr(3,2) <<endl;
-        cout<< "19" << day.substr(6,2) << '-' <<  day.substr(3,2) << '-' <<  day.substr(0,2) <<endl;
+    if(month ==0 || month > 12) return false;
+    if(day == 0) return false;
+    if(month != 2){
+        if(day > max_days[month]) return false;
     }
-    else
+    else{
+        int leap = (year % 4 == 0 && year % 100) || (year % 400 == 0);
+        if(day > 28 + leap) return false;
+    }
+    return true;
+}
+int main()
+{
+    int a,b,c;
+    scanf("%d/%d/%d",&a,&b,&c);
+    for(int data=19600101;data<=20591231;data++)
     {
-        cout<< "20" << day.substr(0,2) << '-' <<  day.substr(3,2) << '-' <<  day.substr(6,2) <<endl;
-        cout<< "20" << day.substr(6,2) << '-' <<  day.substr(0,2) << '-' <<  day.substr(3,2) <<endl;
-        cout<< "20" << day.substr(6,2) << '-' <<  day.substr(3,2) << '-' <<  day.substr(0,2) <<endl;
+        int year = data / 10000, month = data % 10000 / 100, day = data % 100;
+        if(check(year,month,day))
+        {
+            if(year % 100 == a && month == b && day== c ||
+                month == a && day == b && year % 100== c ||
+                day == a && month == b && year % 100== c)
+                printf("%d-%02d-%02d\n",year,month,day);
+        }
+
     }
     return 0;
 }
