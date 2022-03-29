@@ -1,39 +1,29 @@
 #include <iostream>
-#include <string.h>
+#include <map>
 using namespace std;
-
-const int ALEN=1e5+2;
-
+const int ALEN=1e5+10;
 int a[ALEN];
-int sum[ALEN];
+int s[ALEN]; // 前缀和
+map<int,int> cnt; // 同余的个数统计
 
 int main(int argc, char* argv[])
 {
-    memset(sum, 0, sizeof(sum));
+    s[0]=0;
+    cnt[0]=1;
     int n,k;
-    int count=0;
     cin>> n >> k;
     for (int i = 1; i <= n; i++)
     {
         cin>> a[i];
-        sum[i]=sum[i-1]+a[i];
-        // cout<< sum[i] <<endl;
-        if(sum[i]%k==0) count++;
+        s[i]=(s[i-1]+a[i])%k;
+        cnt[s[i]]++;
     }
-
-    for(int i=1; i<=n; i++)
+    long long ans=0;
+    for (int i = 0; i < k; ++i)
     {
-        for(int j=1; j<=n-i; j++)
-        {
-            if((sum[j+i]-sum[j])%k==0)
-            {
-              // cout<< (sum[j+i]-sum[j]) <<endl;
-                count++;
-            }
-        }
+        ans+=(long long)cnt[i]*(cnt[i]-1)/2;
     }
-
-    cout<< count <<endl;
+    cout<< ans <<endl;
     return 0;
 }
 
