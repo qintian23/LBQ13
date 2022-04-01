@@ -95,4 +95,4 @@ error code
 
 数据库的原理
 
-http
+http，UDP/TCP
