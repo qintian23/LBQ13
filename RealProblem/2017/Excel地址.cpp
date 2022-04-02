@@ -44,6 +44,24 @@ int main(int argc, char* argv[])
 {
     long n;
     cin>> n;
-    otc(n);
+    // otc(n);
+    int cnt=0;
+    while (n)
+    {
+        if(n%26==0)
+        {
+            col[cnt++]=26;
+            n=n/26-1;
+        }
+        else
+        {
+            col[cnt++]=n%26;
+            n/=26;
+        }
+    }
+    for (int i = cnt-1; i >=0; --i)
+    {
+        cout<< (char)('A'+col[i]-1);
+    }
     return 0;
 }
