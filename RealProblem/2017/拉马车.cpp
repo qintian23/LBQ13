@@ -31,7 +31,8 @@ int main(int argc, char* argv[])
     cin>> A >> B;
     bool flagA=true;
     bool flagB=false;
-    while (true)
+    int count=0;
+    while (++count<1e5)
     {
         if(flagA)
         {
@@ -54,6 +55,7 @@ int main(int argc, char* argv[])
             flagA=!flagB;
         }
     }
-    
+    if(count>=1e5)
+        cout<< -1 <<endl;
     return 0;
 }
