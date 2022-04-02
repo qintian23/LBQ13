@@ -1,57 +1,60 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
-int a[3][3];
-int b[8];
-int flag;
-bool p(int r[])
+int all[][9]=
 {
-    for(int i=0; i<6; i++)
-    {
-        if(r[i]!=r[i+1])
-            return true;
-    }
-    return false;
-}
-
-void fb(int r[])
+    {4,9,2,3,5,7,8,1,6},
+    {8,1,6,3,5,7,4,9,2}, // 上下
+    {2,9,4,3,5,7,8,1,6}, // 左右
+    {8,3,4,3,5,7,4,9,2}, // 右旋
+    {4,3,8,3,5,7,4,9,2}, // 右旋：左右
+    {6,7,2,3,5,7,8,1,6}, // 右旋：上下 
+    {6,1,8,3,5,7,4,9,2}, // 再右旋
+    {2,7,6,9,5,7,8,1,6}  // 再右旋右旋
+};
+int test(int data[9])
 {
-    if(a[0][0]==0){ b[0]++; b[3]++; b[6]++;}
-    if(a[0][1]==0){ b[0]++; b[4]++;}
-    if(a[0][2]==0){ b[0]++; b[5]++; b[7]++;}
-    if(a[1][0]==0){ b[1]++; b[3]++;}
-    if(a[1][1]==0){ b[1]++; b[4]++; b[6]++;b[7]++;}
-    if(a[1][2]==0){ b[1]++; b[5]++;}
-    if(a[2][0]==0){ b[2]++; b[3]++; b[7]++;}
-    if(a[2][1]==0){ b[2]++; b[4]++;}
-    if(a[2][2]==0){ b[2]++; b[5]++; b[6]++;}
-
-    for (int i = 0; i < 8; i++)
+    int cnt=0,ans=-1;
+    for (int i = 0; i < 8; ++i)
     {
-        if(b[i]==0) flag=r[i];
+        bool ok=true;
+        for (int j = 0; j < 9; j++)
+        {
+            if(data[j]==0) continue;
+            if(data[j]!=all[i][j])
+            {
+                ok=false;
+                break;
+            }
+        }
+        if(ok)
+        {
+            cnt++;
+            ans=i;
+        }
     }
+    if(cnt==1)
+        return ans;
+    else
+        return -1;
 }
 
 int main(int argc, char* argv[])
 {
-    for (int i = 0; i < 3; i++)
-        for(int j = 0; j < 3; j++)
-            cin>> a[i][j];
+    int data[9];
+    for (int i = 0; i < 9; i++)
+        scanf("%d",&data[i]);
     
-    int r[]={
-        // 横
-        a[0][0]+a[0][1]+a[0][2], // 0
-        a[1][0]+a[1][1]+a[1][2], // 1 
-        a[2][0]+a[2][1]+a[2][2], // 2
-        // 竖
-        a[0][0]+a[1][0]+a[2][0], // 3
-        a[0][1]+a[1][1]+a[2][1], // 4
-        a[0][2]+a[1][2]+a[2][2], // 5
-        // 交叉
-        a[0][0]+a[1][1]+a[2][2], // 6
-        a[0][2]+a[1][1]+a[2][0], // 7
-    };
-
-    
-
+    int index=test(data);
+    if(index==-1)
+    {
+        cout<< "Too Many\n" <<endl;
+    }
+    else
+    {
+        printf("%d %d %d\n",all[index][0],all[index][1],all[index][2]);
+        printf("%d %d %d\n",all[index][3],all[index][4],all[index][5]);
+        printf("%d %d %d\n",all[index][6],all[index][7],all[index][8]);
+    }
     return 0;
 }
