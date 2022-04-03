@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <cmath>
 #include <algorithm>
 using namespace std;
@@ -22,9 +23,10 @@ struct line
     {
         if(w+_p.w>M)
         {
-            _p.h=ceil(1.0*_p.h*(M-w)-_p.w);
+            _p.h=ceil(1.0*_p.h*(M-w)/_p.w);
             _p.w=M-w;
         }
+        return line(w+_p.w,max(h,_p.h));
     }
     bool full()
     {
