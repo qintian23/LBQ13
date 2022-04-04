@@ -9,3 +9,7 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
+
+
+// gcc cmd.c -o cmd
+// ./cmd --arg1 1 --arg2 demo --arg9 shiyanlou
