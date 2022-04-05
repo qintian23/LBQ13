@@ -32,9 +32,7 @@ void traverse_list(struct List* list, void (*callback)(void* data))
 
 void insert_after(struct List* list, struct Node* prev, void* data)
 {
-    // struct Node* next=prev?list->head : prev->next;
-    struct Node* next=prev? prev->next : list->head;
-
+    struct Node* next=prev?list->head : prev->next;
     struct Node* newnode=(struct Node*)malloc(sizeof(struct Node));
     newnode->data=data;
 
@@ -49,8 +47,7 @@ void insert_after(struct List* list, struct Node* prev, void* data)
 
 void insert_before(struct List* list, struct Node* next, void* data)
 {
-    // struct Node* prev=next?next->prev:list->tail;
-    struct Node* prev=next?list->tail:next->prev;
+    struct Node* prev=next?next->prev:list->tail;
     struct Node* newnode=(struct Node*)malloc(sizeof(struct Node));
     
     newnode->data=data;
