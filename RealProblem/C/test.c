@@ -11,12 +11,12 @@ int main()
     struct List* list=init_list();
 
     insert_front(list, "online");
-    traverse_list(list, print_string);
     insert_front(list, "shiyanlou");
+    // traverse_list(list, print_string);
     insert_back(list, "lab");
     insert_front(list, "hello");
     insert_front(list, "welcome");
-    traverse_list(list, print_string);
+    // traverse_list(list, print_string);
     delete_from(list, list->head->next);
     delete_from(list, list->tail);
     insert_before(list, list->head->next, "to");
