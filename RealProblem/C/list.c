@@ -30,9 +30,9 @@ void traverse_list(struct List* list, void (*callback)(void* data))
     }
 }
 
-void insert_before(struct List* list, struct Node* prev, void* data)
+void insert_after(struct List* list, struct Node* prev, void* data)
 {
-    struct Node* next=prev? prev->next:list->head; // 有bug，插入结点的后向指针：如果该节点的前向指针为空，则指向链表头部，否则指向该节点后面
+    struct Node* next=prev? prev->next:NULL; // 有bug，插入结点的后向指针：如果该节点的前向指针为空，则指向链表头部，否则指向该节点后面
     struct Node* newnode=(struct Node*)malloc(sizeof(struct Node));
 
     newnode->data=data;
@@ -45,9 +45,9 @@ void insert_before(struct List* list, struct Node* prev, void* data)
     list->head==NULL ? list->head = list->tail=newnode : prev == NULL ? list->head=newnode : 0;
 }
 
-void insert_after(struct List* list, struct Node* next, void* data)
+void insert_before(struct List* list, struct Node* next, void* data)
 {
-    struct Node* prev=next?next->prev:list->tail; // 插入结点的前向指针：如果后向指针为空，则指向链表尾部，否则指向该节点前面
+    struct Node* prev=next?next->prev:NULL; // 插入结点的前向指针：如果后向指针为空，则指向链表尾部，否则指向该节点前面
     struct Node* newnode=(struct Node*)malloc(sizeof(struct Node)); // 声明插入结点
 
     newnode->data=data; // 赋值
@@ -63,12 +63,12 @@ void insert_after(struct List* list, struct Node* next, void* data)
 
 void insert_front(struct List* list, void* data)
 {
-    insert_before(list, NULL, data);
+    insert_before(list, list->head, data);
 }
 
 void insert_back(struct List* list, void* data)
 {
-    insert_after(list, NULL, data);
+    insert_after(list, list->tail, data);
 }
 
 void delete_from(struct List* list, struct Node* node)
