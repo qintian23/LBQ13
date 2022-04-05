@@ -54,6 +54,8 @@
         "xmemory": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }
 }
